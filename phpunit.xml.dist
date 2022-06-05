@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit colors="true"
+         bootstrap="../../../vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="PandaZoom\LaravelUserLocaleTests\Middleware">
+            <directory suffix="Test.php" phpVersion="8.1.0" phpVersionOperator=">=">./tests/Middleware</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php" phpVersion="8.1.0" phpVersionOperator=">=">./src</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <server name="TELESCOPE_ENABLED" value="false"/>
+        <server name="APP_ENV" value="testing"/>
+        <server name="BCRYPT_ROUNDS" value="4"/>
+        <server name="CACHE_DRIVER" value="array"/>
+        <server name="MAIL_DRIVER" value="array"/>
+        <server name="QUEUE_CONNECTION" value="sync"/>
+        <server name="SESSION_DRIVER" value="array"/>
+    </php>
+</phpunit>
